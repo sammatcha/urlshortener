@@ -1,0 +1,21 @@
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: yourname
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: urlshortener
+    ports:
+      - 5432:5432
+    # volumes:
+    #   - db_data:/var/lib/postgresql/data
+
+  url_shortener_go:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+  
