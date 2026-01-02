@@ -13,7 +13,7 @@ type Handler struct {
 }
 	//shorten url
 func(h *Handler) ShortenURLHandler(w http.ResponseWriter, r *http.Request) {
-	// log.Println("shorten url handler triggered")
+	log.Println("shorten url handler triggered")
 
 		// Extract long URL from http request
 	longURL:= r.FormValue("url")
@@ -39,7 +39,7 @@ func(h *Handler) ShortenURLHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	// log.Println("URL stored:", shortURL, "->", longURL)
-    fmt.Fprintf(w, "Generated Short URL: %s", shortURL)
+    fmt.Fprintf(w, "Shortened URL here: %s", shortURL)
 }
 
 	//redirect

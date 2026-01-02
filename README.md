@@ -25,7 +25,11 @@ The project uses the following technologies: <br>
 4. Database
    - Deploy postgres db: `docker compose up -d`
    - Stop postgres db: `docker compose down`
-   
+
+### Commands
+`npm run dev` <br>
+`go run cmd/main.go`
+
 ### Testing
 shorten url:
 ```
@@ -36,13 +40,12 @@ redirect:
 ```
 curl http://localhost:8080/<short-url> 
 ```
-Unit Testing
-- [ ]  Create unit testing
+
 
 ### Roadmap
-- [ ] Build out simple UI
-- [ ] Thorough documentation
-- [ ] Potentially build out dashboard with customizable capabilities <br>
-        * dependent on other factors , such as costs*
+- [X] Build out simple UI
+- [ ] Create spacing for shortened url output
+- [ ] Work on error handling + validating urls for db
+- [ ]  Create unit testing
 
 
