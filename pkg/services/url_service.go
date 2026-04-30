@@ -30,12 +30,12 @@ func (service *URLService) SaveURL(longURL, shortURL string) error {
 }
 
 	//get url by short url
-func (service *URLService) GetURL(shortUL string) (*models.Url, error){
+func (service *URLService) GetURL(shortURL string) (*models.Url, error){
 	var url models.Url
-	result := service.DB.Where("short_url=?", shortUL).First(&url)
+	result := service.DB.Where("short_url=?", shortURL).First(&url)
 	if result.Error != nil {
 		if result.Error == gorm.ErrRecordNotFound {
-		log.Println("Short URL not found", shortUL)
+		log.Println("Short URL not found", shortURL)
 		return nil,nil
 	}
 	log.Println("Error retrieving URL:", result.Error)
